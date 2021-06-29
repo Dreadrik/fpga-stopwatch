@@ -1,0 +1,31 @@
+set_frequency SYSCLK 100
+
+# Clock
+set_io SYSCLK J3 # GBIN6
+
+# Button
+set_io -pullup yes BTN D1   # PIO3_09
+
+# Driver clock
+set_io SEGCLK G5 # PIO3_08
+
+# 7-segment LEDs
+set_io SEGE D2  # PIO3_07
+set_io SEGD F4  # PIO3_06
+set_io SEGC C2  # PIO3_05
+set_io SEGDP C1  # PIO3_04
+set_io SEGG B1  # PIO3_03
+set_io SEGF F5  # PIO3_02
+set_io SEGA B2  # PIO3_01
+set_io SEGB E4  # PIO3_00
+
+# Cathodes
+set_io SEGCAT[0] J2 # PIO3_28
+set_io SEGCAT[1] H1 # PIO3_27
+set_io SEGCAT[2] G1 # PIO3_25
+set_io SEGCAT[3] J5 # PIO3_24
+set_io SEGCAT[4] H2 # PIO3_23
+
+
+
+

@@ -1,0 +1,21 @@
+
+# Created by https://www.toptal.com/developers/gitignore/api/scons
+# Edit at https://www.toptal.com/developers/gitignore?templates=scons
+
+### SCons ###
+# for projects that use SCons for building: http://http://www.scons.org/
+.sconsign.dblite
+
+# When configure fails, SCons outputs these
+config.log
+.sconf_temp
+
+# End of https://www.toptal.com/developers/gitignore/api/scons
+
+hardware.bin
+hardware.asc
+hardware.rpt
+stopwatch_tb.vcd
+*.out
+*.json
+*.asc
