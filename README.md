@@ -6,7 +6,7 @@ A breadboard stopwatch implemented using an iCE40HX8K FPGA.
 
 ## Why?
 
-This project was made by me to learn some FPGA programming and Verilog, using cheap open source hardware and software toolchains. 
+This project was made by me to learn some FPGA programming and Verilog, using cheap open source hardware and software toolchains.
 
 ## What I used
 
@@ -29,12 +29,12 @@ This project was made by me to learn some FPGA programming and Verilog, using ch
 
 ### FPGA
 The FPGA multiplexes the 5 displays by selecting one digit a time and drives the corresponding display cathode low. At the same time it outputs new 
-segment data for the current digit. This means that each display is only lit a 5'th of the time, but the high update speed makes this invicible for the eye.
+segment data for the current digit. This means that each display is only lit a 5'th of the time, but the high update speed makes this invisible to the eye.
 The button input is debounced and selects between three modes: start/stop and reset.
 
 ### Breadboard
-5V, GND and 3.3V data lines comes from the GPIO1 connector on the FPGA dev board.
-8 io lines (SEGA-SEGDP) from the fpga control the same segment from each display. Segments are connected together and driven by a Darlington source through 220 Ohm resistors. The clock input of the Darlington source is driven from a separate io line (SEGCLK) from the FPGA. 5 io lines (SEGCAT[0-4] control the cathode for each display through the sink driver. The drivers are needed because the low current available from the iCE40HX lines (6 mA). A momentary push button drives the BTN io line to ground when pressed.
++5V VCC, GND and 3.3V data lines comes from the GPIO1 connector on the FPGA dev board.
+8 io lines (SEGA-SEGDP) from the FPGA control the same segment for all displays. Segments are driven by a 8-Bit Darlington source through 220 Ohm resistors. The clock input of the Darlington source is driven from a separate io line (SEGCLK). 5 io lines (SEGCAT[0-4]) control the cathode for each display through the sink driver. The drivers are needed because of the low current available from the iCE40HX lines (max 6 mA). A momentary push button drives the BTN io line to ground when pressed.
 
 ## How to build
 
@@ -42,11 +42,12 @@ Just hook everything up on the breadboard according to the schematic!
 
 ## How to program
 
-I used the [APIO Open source ecosystem for open FPGA boards](https://github.com/FPGAwars/apio) to build this project. Install APIO according to the instructions in the link. You will need at least the yosys, ice40, nextpnr and scons packages, but iverilog, gtkwave and verilator are also very useful for simulation.
+I used the [APIO Open source ecosystem for open FPGA boards](https://github.com/FPGAwars/apio) to build this project. APIO makes building, simulating and uploading designs very simple, and is available on Windows, Linux and Mac!
+Install APIO according to the instructions in the link. You will need at least the yosys, ice40, nextpnr and scons packages, but iverilog, gtkwave and verilator are also very useful for testing, verification and simulation.
 
-The Olimexino was used as a programmer, and has to have the programming firmware installed [available from here](https://github.com/OLIMEX/iCE40HX1K-EVB/tree/master/programmer/olimexino-32u4%20firmware).
+The Olimexino was used as a programmer, and it has to have the programming firmware installed [available from here](https://github.com/OLIMEX/iCE40HX1K-EVB/tree/master/programmer/olimexino-32u4%20firmware).
 
-For programming the FPGA you will have build and install the [iceprogduino](https://github.com/OLIMEX/iCE40HX1K-EVB/tree/master/programmer/iceprogduino) tool from Olimex. Make sure to change the serial port in iceprogduino.c.
+For programming the FPGA you will have to build and install the [iceprogduino](https://github.com/OLIMEX/iCE40HX1K-EVB/tree/master/programmer/iceprogduino) tool from Olimex. Make sure to change to the serial port used by the Olimexino in iceprogduino.c.
 
 When everything is installed correctly, it should simply be a matter of running one of these:
 
