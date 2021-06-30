@@ -1,19 +1,19 @@
 [*]
 [*] GTKWave Analyzer v3.3.107 (w)1999-2020 BSI
-[*] Tue Jun 29 13:51:56 2021
+[*] Wed Jun 30 11:28:57 2021
 [*]
 [dumpfile] "/Users/fredriklittmarck/source/fpga/stopwatch/src/stopwatch_tb.vcd"
-[dumpfile_mtime] "Tue Jun 29 13:25:03 2021"
-[dumpfile_size] 70712
+[dumpfile_mtime] "Wed Jun 30 11:19:55 2021"
+[dumpfile_size] 59850
 [savefile] "/Users/fredriklittmarck/source/fpga/stopwatch/src/stopwatch_tb.gtkw"
 [timestart] 0
 [size] 1548 840
 [pos] -1 -1
-*-29.000000 2566000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-29.000000 265000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] stopwatch_tb.
 [treeopen] stopwatch_tb.uut.
 [sst_width] 193
-[signals_width] 141
+[signals_width] 150
 [sst_expanded] 1
 [sst_vpaned_height] 251
 @200
@@ -28,6 +28,7 @@ stopwatch_tb.uut.SEGD
 stopwatch_tb.uut.SEGE
 stopwatch_tb.uut.SEGF
 stopwatch_tb.uut.SEGG
+stopwatch_tb.uut.SEGDP
 stopwatch_tb.uut.SEGCLK
 @800022
 stopwatch_tb.uut.SEGCAT[4:0]
@@ -40,23 +41,22 @@ stopwatch_tb.uut.SEGCAT[4:0]
 @1001200
 -group_end
 @200
--debouncer
+-button_handler
 @28
-stopwatch_tb.uut.dbnc.button
-stopwatch_tb.uut.dbnc.slow_clk_en
-stopwatch_tb.uut.btn_tap
-@200
--internals
+stopwatch_tb.uut.bh0.button
+stopwatch_tb.uut.bh0.btn_tap
 @29
-stopwatch_tb.uut.sel[2:0]
-@22
-stopwatch_tb.uut.segments[7:0]
+stopwatch_tb.uut.bh0.state[2:0]
 @28
-stopwatch_tb.uut.digit_reset
-stopwatch_tb.uut.inc
-@22
-stopwatch_tb.uut.digits[19:0]
+stopwatch_tb.uut.bh0.clear
+stopwatch_tb.uut.bh0.prepare_start
+stopwatch_tb.uut.bh0.running
+@200
+-bcd_counter
 @28
-stopwatch_tb.uut.state[2:0]
+stopwatch_tb.uut.bcd_counter0.inc
+stopwatch_tb.uut.bcd_counter0.reset
+@22
+stopwatch_tb.uut.bcd_counter0.digits[19:0]
 [pattern_trace] 1
 [pattern_trace] 0

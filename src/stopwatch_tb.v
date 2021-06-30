@@ -36,24 +36,23 @@ module stopwatch_tb;
         $dumpfile("stopwatch_tb");
         $dumpvars(0, stopwatch_tb);
 
-        #10_000 $finish;
+        #8_000 $finish;
     end
 
     initial begin
         clk = 1'b0;
         button = 1'b1;
-        #1000
-        button = 1'b0;
-        #400
-        button = 1'b1;
-        #1000
-        button = 1'b0;
-        #400
-        button = 1'b1;
-        #1000
-        button = 1'b0;
-        #400
-        button = 1'b1;
+        #500
+        // start
+        button = 1'b0; #100 button = 1'b1;
+
+        #6000
+        // stop
+        button = 1'b0; #100 button = 1'b1;
+
+        #500
+        // reset
+        button = 1'b0; #100 button = 1'b1;
     end
 
     initial forever clk = #5 ~clk;
